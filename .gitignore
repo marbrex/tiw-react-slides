@@ -9,3 +9,11 @@
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+
+# Obsidian
+.obsidian/workspace
+.obsidian/appearance.json
+.obsidian/hotkeys.json
+.obsidian/workspace.json
+.obsidian/core-plugins-migration.json
+.obsidian/core-plugins.json
