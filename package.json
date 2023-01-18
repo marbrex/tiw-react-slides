@@ -13,6 +13,9 @@
   },
   "license": "UNLICENSED",
   "type": "module",
+  "scripts": {
+    "server-up": "node src/server/app.js"
+  },
   "devDependencies": {
     "express": "^4.18.2"
   },
