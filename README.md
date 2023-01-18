@@ -104,3 +104,4 @@ typescript@*
 √ Which package manager do you want to use? · yarn
 ```
 
+Le fichier de configuration **.eslintrc.json** est généré à la fin.
