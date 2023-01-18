@@ -40,3 +40,12 @@
     "type": "module"
   }
   ```
+
+### Ajouter Express
+
+> P.S. Ignorer (désactiver) le cache yarn (Zero-Installs) dans le .gitignore
+
+```shell
+yarn add express --dev
+```
+
