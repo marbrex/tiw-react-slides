@@ -41,11 +41,19 @@
   }
   ```
 
+> Remarque: `yarn init` génère un fichier de config `.editorconfig`. Afin de l'appliquer dans VS Code, il faut installer une extension Editor Config.
+
 ### Ajouter Express
 
 > P.S. Ignorer (désactiver) le cache yarn (Zero-Installs) dans le .gitignore
 
 ```shell
 yarn add express --dev
+```
+
+### Ajouter Dotenv
+
+```shell
+yarn add dotenv
 ```
 
