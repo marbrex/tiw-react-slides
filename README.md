@@ -2,6 +2,8 @@
 
 ## Prérequis
 
+### Créer un projet vide
+
 - Installer **NodeJS**
 - *(Facultatif)* Installer **N**ode **V**ersion **M**anager ([Unix](https://github.com/nvm-sh/nvm) / [Windows](https://github.com/coreybutler/nvm-windows))
 - Définir **Yarn** en tant que Package Manager par défaut:
@@ -30,8 +32,11 @@
       "email": "eldar.kasmamytov@etu.univ-lyon1.fr",
       "url": "https://eldark.net/"
     },
+    "repository": {
+      "type": "git",
+      "url": "https://forge.univ-lyon1.fr/p1712650/tiw-react-slides"
+    },
     "license": "UNLICENSED",
     "type": "module"
   }
   ```
-
