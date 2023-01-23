@@ -1,3 +1,6 @@
+########## NPM ##########
+node_modules/
+
 ########## YARN ##########
 .yarn/*
 !.yarn/patches
@@ -16,9 +19,10 @@
 #.pnp.*
 
 ########## OBSIDIAN ##########
-.obsidian/workspace
-.obsidian/appearance.json
-.obsidian/hotkeys.json
-.obsidian/workspace.json
-.obsidian/core-plugins-migration.json
-.obsidian/core-plugins.json
+.obsidian/*
+!.obsidian/app.json
+
+########## VS CODE ##########
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

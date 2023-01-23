@@ -105,3 +105,28 @@ typescript@*
 ```
 
 Le fichier de configuration **.eslintrc.json** est généré à la fin.
+
+#### Problèmes de compatibilité
+
+- **Problème rencontré**:  
+  L'extension officielle [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) pour VS Code ne détecte pas le package **eslint** installé via **yarn**. En conséquence, il n'y a pas de détection d'erreurs de syntaxe en temps réel dans VS Code ([Issue sur GitHub](https://github.com/microsoft/vscode-eslint/issues/601))  
+
+- **Raison du problème**:  
+ Apparemment, l'extension a besoin du dossier **node_modules**, qui n'est pas présent dans les projets **Yarn v2** utilisant **Plug'n'Play**.  
+
+- **Solutions**:  
+  - *(Recommandée)* Installer [Editor SDKs](https://next.yarnpkg.com/getting-started/editor-sdks) pour VS Code:
+    ```bash
+    yarn dlx @yarnpkg/sdks vscode
+    ```
+  - [Forcer](https://yarnpkg.com/getting-started/migration#if-required-enable-the-node-modules-plugin) yarn à générer le **node_modules** malgré PNP. Ajouter la ligne suivante dans le **.yarnrc.yml**:
+    ```yml
+    nodeLinker: node-modules
+    ```
+  - Utiliser le package [**PnPify**](https://next.yarnpkg.com/advanced/pnpify#vscode-support):
+    ```bash
+    yarn add @yarnpkg/pnpify
+    ```
+
+  > Remarque: Selon [la page officielle de yarn](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored), le dossier **.yarn/sdks** ne doit pas être ignoré dans git. 
+
