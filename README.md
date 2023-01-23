@@ -158,10 +158,16 @@ Modifier les valeurs par défaut:
 ### Ajouter React
 
 ```bash
-yarn add react react-dom --dev
+yarn add --dev react react-dom
 ```
 
 ```bash
 yarn add @types/react-dom @types/react
+```
+
+### Ajouter Parcel (module bundler)
+
+```bash
+yarn add --dev parcel
 ```
 

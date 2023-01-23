@@ -29,3 +29,6 @@ node_modules/
 
 ########## TypeScript ##########
 dist/
+
+########## PARCEL ##########
+.parcel-cache
