@@ -130,3 +130,28 @@ Le fichier de configuration **.eslintrc.json** est généré à la fin.
 
   > Remarque: Selon [la page officielle de yarn](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored), le dossier **.yarn/sdks** ne doit pas être ignoré dans git. 
 
+### Ajouter et configurer TypeScript
+
+```bash
+yarn add typescript ts-node --dev
+```
+
+```bash
+yarn add @types/node @types/express
+```
+
+```bash
+yarn tsc --init
+```
+
+Modifier les valeurs par défaut:
+
+```json
+{
+  "target": "ES5",
+  "module": "ESNext",
+  "rootDir": "./src/client",
+  "outDir": "./dist/client"
+}
+```
+
