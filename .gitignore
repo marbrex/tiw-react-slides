@@ -1,3 +1,4 @@
+########## YARN ##########
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -7,10 +8,14 @@
 
 # Swap the comments on the following lines if you don't wish to use zero-installs
 # Documentation here: https://yarnpkg.com/features/zero-installs
-#!.yarn/cache
-.pnp.*
 
-# Obsidian
+# Desactivate local yarn cache and enable the global one ('enableGlobalCache: true' in .yarnrc.yml) https://yarnpkg.com/configuration/yarnrc#enableGlobalCache
+#!.yarn/cache
+
+# (PNP: Plug 'n Play) Contains the dependency tree that Node will use to load packages
+#.pnp.*
+
+########## OBSIDIAN ##########
 .obsidian/workspace
 .obsidian/appearance.json
 .obsidian/hotkeys.json
