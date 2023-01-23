@@ -155,3 +155,13 @@ Modifier les valeurs par défaut:
 }
 ```
 
+### Ajouter React
+
+```bash
+yarn add react react-dom --dev
+```
+
+```bash
+yarn add @types/react-dom @types/react
+```
+

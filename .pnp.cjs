@@ -30,6 +30,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/express", "npm:4.17.15"],\
             ["@types/node", "npm:18.11.18"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["@types/react-dom", "npm:18.0.10"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
@@ -39,6 +41,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-promise", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.1.1"],\
             ["eslint-plugin-react", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:7.32.1"],\
             ["express", "npm:4.18.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
@@ -281,6 +285,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/prop-types", [\
+        ["npm:15.7.5", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-prop-types-npm-15.7.5-2aa48aa177-8.zip/node_modules/@types/prop-types/",\
+          "packageDependencies": [\
+            ["@types/prop-types", "npm:15.7.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/qs", [\
         ["npm:6.9.7", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-qs-npm-6.9.7-4a3e6ca0d0-8.zip/node_modules/@types/qs/",\
@@ -295,6 +308,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-range-parser-npm-1.2.4-23d797fbde-8.zip/node_modules/@types/range-parser/",\
           "packageDependencies": [\
             ["@types/range-parser", "npm:1.2.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react", [\
+        ["npm:18.0.27", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-npm-18.0.27-931b59df28-8.zip/node_modules/@types/react/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.0.27"],\
+            ["@types/prop-types", "npm:15.7.5"],\
+            ["@types/scheduler", "npm:0.16.2"],\
+            ["csstype", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react-dom", [\
+        ["npm:18.0.10", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-dom-npm-18.0.10-97fe360927-8.zip/node_modules/@types/react-dom/",\
+          "packageDependencies": [\
+            ["@types/react-dom", "npm:18.0.10"],\
+            ["@types/react", "npm:18.0.27"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/scheduler", [\
+        ["npm:0.16.2", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-8.zip/node_modules/@types/scheduler/",\
+          "packageDependencies": [\
+            ["@types/scheduler", "npm:0.16.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -893,6 +937,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["path-key", "npm:3.1.1"],\
             ["shebang-command", "npm:2.0.0"],\
             ["which", "npm:2.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["csstype", [\
+        ["npm:3.1.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/csstype-npm-3.1.1-3857baf48b-8.zip/node_modules/csstype/",\
+          "packageDependencies": [\
+            ["csstype", "npm:3.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2893,6 +2946,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react", [\
+        ["npm:18.2.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/react-npm-18.2.0-1eae08fee2-8.zip/node_modules/react/",\
+          "packageDependencies": [\
+            ["react", "npm:18.2.0"],\
+            ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-dom", [\
+        ["npm:18.2.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/react-dom-npm-18.2.0-dd675bca1c-8.zip/node_modules/react-dom/",\
+          "packageDependencies": [\
+            ["react-dom", "npm:18.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-3667407cbc/3/AppData/Local/Yarn/Berry/cache/react-dom-npm-18.2.0-dd675bca1c-8.zip/node_modules/react-dom/",\
+          "packageDependencies": [\
+            ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["loose-envify", "npm:1.4.0"],\
+            ["react", "npm:18.2.0"],\
+            ["scheduler", "npm:0.23.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-is", [\
         ["npm:16.13.1", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/react-is-npm-16.13.1-a9b9382b4f-8.zip/node_modules/react-is/",\
@@ -3009,6 +3096,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/safer-buffer-npm-2.1.2-8d5c0b705e-8.zip/node_modules/safer-buffer/",\
           "packageDependencies": [\
             ["safer-buffer", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["scheduler", [\
+        ["npm:0.23.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/scheduler-npm-0.23.0-a379a6bc3b-8.zip/node_modules/scheduler/",\
+          "packageDependencies": [\
+            ["scheduler", "npm:0.23.0"],\
+            ["loose-envify", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3227,6 +3324,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tiw-react-slides", "workspace:."],\
             ["@types/express", "npm:4.17.15"],\
             ["@types/node", "npm:18.11.18"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["@types/react-dom", "npm:18.0.10"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
@@ -3236,6 +3335,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-promise", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.1.1"],\
             ["eslint-plugin-react", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:7.32.1"],\
             ["express", "npm:4.18.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
