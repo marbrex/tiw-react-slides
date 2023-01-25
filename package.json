@@ -17,8 +17,8 @@
   "scripts": {
     "server-up": "node src/server/app.js",
     "lint": "eslint ./src --fix",
-    "dev": "parcel",
-    "build": "parcel build"
+    "client-dev": "parcel",
+    "client-build": "parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.8.3",
