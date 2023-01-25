@@ -1,0 +1,8 @@
+.obsidian/
+.vscode/
+.dist/
+.editorconfig
+
+.yarn/
+.pnp.*
+yarn.lock
