@@ -1,5 +1,90 @@
-$bg-clr: turquoise;
+$bg-clr: lightcoral;
 
 body {
   background-color: $bg-clr;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin flex($direction, $wrap, $jc, $ai) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-areas: 'slideshow' 'toolbar';
+
+  .AppToolbar {
+    grid-area: toolbar;
+  }
+
+  .SlideShow {
+    $slideMargin: 10px;
+  
+    @include flex(row, nowrap, flex-start, center);
+    grid-area: slideshow;
+    margin: 0;
+    padding: $slideMargin;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 90vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  
+    .Slide {
+      min-width: 100%;
+      margin-right: $slideMargin;
+      height: 100%;
+      border: 1px solid black;
+      border-radius: 3px;
+  
+      display: grid;
+      grid-template-areas: 'title' 'text-content';
+      gap: 1em;
+      grid-template-rows: auto 2fr;
+  
+      font-size: 25px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+  
+      .Slide-title {
+        @include flex(row, nowrap, center, center);
+        grid-area: title;
+        border: 1px solid white;
+        padding: $slideMargin;
+  
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+  
+      .Slide-text {
+        @include flex(row, nowrap, center, flex-start);
+        grid-area: text-content;
+        border: 1px solid green;
+        padding: $slideMargin;
+  
+        font-size: 1em;
+      }
+  
+    }
+  
+  }
+  
 }
