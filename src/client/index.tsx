@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import ErrorPage from './routes/ErrorPage'
+import store from './application/store'
+import { StoreProvider } from 'easy-peasy'
 
 const router = createBrowserRouter([
   {
@@ -13,7 +15,9 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+      <StoreProvider store={store}>
+        <RouterProvider router={router} />
+      </StoreProvider>
+    </React.StrictMode>
 )

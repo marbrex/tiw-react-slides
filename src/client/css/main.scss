@@ -1,10 +1,13 @@
-$bg-clr: lightcoral;
+$bg-clr: #1d2a35;
+$bg-clr2: lighten($bg-clr, 10%);
+$bg-clr3: lighten($bg-clr, 15%);
+$slide-bg-clr: lighten($bg-clr, 15%);
+$txt-clr: lighten($bg-clr, 70%);
 
 body {
   background-color: $bg-clr;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 #root {
@@ -21,55 +24,113 @@ body {
 }
 
 .App {
+  @include flex(column, nowrap, flex-end, center);
   width: 100%;
   height: 100%;
 
-  display: grid;
-  grid-template-areas: 'slideshow' 'toolbar';
-
   .AppToolbar {
-    grid-area: toolbar;
+    @include flex(row, nowrap, flex-end, center);
+    height: min-content;
+    background-color: $bg-clr2;
+    color: $txt-clr;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    z-index: 999;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+                rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    .SlideControls {
+      @include flex(row, wrap, center, center);
+    }
+
+    .SlidePagination {
+
+      input[type=number] {
+        cursor: text;
+        width: 70px;
+
+        &:invalid {
+          border: 3px solid darken(crimson, 15%);
+        }
+
+        &:focus {
+          background-color: lighten($bg-clr3, 10%);
+        }
+
+        /* Disable arrows on Chrome, Safari, Edge, Opera */
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    > * {
+      margin: 0 15px 0 0;
+    }
+
+    > *:last-child {
+      margin: 0;
+    }
+
+    button, input {
+      cursor: pointer;
+      outline: none;
+      color: $txt-clr;
+      height: 30px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border: 1px solid $bg-clr;
+      border-radius: 2px;
+      background-color: $bg-clr3;
+      transition: .1s;
+
+      &:enabled:hover {
+        background-color: lighten($bg-clr3, 10%);
+      }
+
+      &:enabled:active {
+        background-color: lighten($bg-clr3, 20%);
+      }
+
+      &:disabled {
+        cursor: no-drop;
+        opacity: 0.5;
+      }
+    }
+
   }
 
   .SlideShow {
-    $slideMargin: 10px;
+    $slideMargin: 20px;
   
-    @include flex(row, nowrap, flex-start, center);
-    grid-area: slideshow;
-    margin: 0;
-    padding: $slideMargin;
-    border: 1px solid black;
+    @include flex(row, nowrap, center, center);
+    padding: calc($slideMargin * 1.8) $slideMargin;
     box-sizing: border-box;
-    width: 100vw;
-    height: 90vh;
-    overflow-x: auto;
-    overflow-y: hidden;
+    width: 100%;
+    height: 90%;
+    flex-grow: 1;
   
     .Slide {
-      min-width: 100%;
-      margin-right: $slideMargin;
+      width: 100%;
       height: 100%;
-      border: 1px solid black;
+      margin: $slideMargin;
       border-radius: 3px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background-color: $slide-bg-clr;
+      font-size: 25px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
       display: grid;
       grid-template-areas: 'title' 'text-content';
       gap: 1em;
       grid-template-rows: auto 2fr;
   
-      font-size: 25px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-      &:last-child {
-        margin-right: 0;
-      }
-  
       .Slide-title {
         @include flex(row, nowrap, center, center);
         grid-area: title;
-        border: 1px solid white;
         padding: $slideMargin;
-  
         font-size: 1.5em;
         font-weight: bold;
       }
@@ -77,9 +138,7 @@ body {
       .Slide-text {
         @include flex(row, nowrap, center, flex-start);
         grid-area: text-content;
-        border: 1px solid green;
         padding: $slideMargin;
-  
         font-size: 1em;
       }
   

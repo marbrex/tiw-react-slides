@@ -1,18 +1,13 @@
 import * as React from 'react'
+import { useStoreState } from '../application/store/hooks'
 import Slide from './Slide'
 
-interface Props {
-  slides: Slide[]
-}
+const SlideShow: React.FC = (): JSX.Element => {
+  const slide = useStoreState(state => state.slide)
 
-const SlideShow: React.FC<Props> = ({ slides }): JSX.Element => {
   return (
     <div className='SlideShow'>
-      {
-        slides
-          .filter(slide => slide.visible)
-          .map((slide, idx) => <Slide key={idx} slide={slide} />)
-      }
+      <Slide slide={slide} />
     </div>
   )
 }
