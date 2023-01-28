@@ -6,13 +6,12 @@ interface Props {
 }
 
 const Slide: React.FC<Props> = ({ slide }) => {
-  const slideNum = useStoreState(state => state.slideIndex + 1)
+  const isVisible = useStoreState(state => state.isVisible)
 
   return (
-    <div className='Slide'>
+    <div className={`Slide ${!isVisible ? 'invisible' : ''}`}>
       <span className='Slide-title'>{slide.title}</span>
       <span className='Slide-text'>{slide.text}</span>
-      <span>Slide Number {slideNum}</span>
     </div>
   )
 }

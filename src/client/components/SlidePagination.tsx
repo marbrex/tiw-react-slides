@@ -34,7 +34,8 @@ const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
 
   return (
     <div className='SlidePagination'>
-      <input type='number' min={1} max={slidesCount}
+      <input type='number' placeholder='Slide'
+        min={1} max={slidesCount}
         value={isNaN(slideNum) ? '' : slideNum}
         onChange={handleOnChange}
         onBlur={handleOnBlur}/>

@@ -126,6 +126,10 @@ body {
       grid-template-areas: 'title' 'text-content';
       gap: 1em;
       grid-template-rows: auto 2fr;
+
+      &.invisible {
+        opacity: 0.4;
+      }
   
       .Slide-title {
         @include flex(row, nowrap, center, center);
