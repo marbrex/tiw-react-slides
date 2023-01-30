@@ -15,4 +15,4 @@ RUN yarn install
 
 COPY . .
 
-CMD [ "make" ]
+CMD [ "sh", "-c", "yarn client-build && yarn server-up" ]
