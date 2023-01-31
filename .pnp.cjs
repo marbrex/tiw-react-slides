@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["parcel", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.8.3"],\
             ["process", "npm:0.11.10"],\
             ["react", "npm:18.2.0"],\
+            ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
@@ -5629,6 +5630,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-device-detect", [\
+        ["npm:2.2.2", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/react-device-detect-npm-2.2.2-1848521a19-8.zip/node_modules/react-device-detect/",\
+          "packageDependencies": [\
+            ["react-device-detect", "npm:2.2.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2", {\
+          "packageLocation": "./.yarn/__virtual__/react-device-detect-virtual-e69a378428/3/AppData/Local/Yarn/Berry/cache/react-device-detect-npm-2.2.2-1848521a19-8.zip/node_modules/react-device-detect/",\
+          "packageDependencies": [\
+            ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["@types/react-dom", "npm:18.0.10"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
+            ["ua-parser-js", "npm:1.0.33"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-dom", [\
         ["npm:18.2.0", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/react-dom-npm-18.2.0-dd675bca1c-8.zip/node_modules/react-dom/",\
@@ -6373,6 +6401,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["parcel", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.8.3"],\
             ["process", "npm:0.11.10"],\
             ["react", "npm:18.2.0"],\
+            ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
@@ -6567,6 +6596,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/typescript-patch-7bc527fc0a-8.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ua-parser-js", [\
+        ["npm:1.0.33", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/ua-parser-js-npm-1.0.33-60ab7da777-8.zip/node_modules/ua-parser-js/",\
+          "packageDependencies": [\
+            ["ua-parser-js", "npm:1.0.33"]\
           ],\
           "linkType": "HARD"\
         }]\
