@@ -7,26 +7,50 @@ import App from './App'
 import ErrorPage from './routes/ErrorPage'
 import SlideLayout from './components/SlideLayout'
 import Slide from './components/Slide'
+import SlideControls from './components/SlideControls'
+import SlidePagination from './components/SlidePagination'
+import ControlLayout from './components/ControlLayout'
+import { isMobile } from 'react-device-detect'
 
 const router = createBrowserRouter([
   {
     path: '/',
+    loader: () => {
+      if (isMobile) return redirect('/control')
+      return null
+    },
     element: <App />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'slide',
+        element: <SlideLayout />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true,
+            loader: () => redirect('/slide/1')
+          },
+          {
+            path: ':id',
+            element: <Slide />,
+            errorElement: <ErrorPage />
+          }
+        ]
+      }
+    ]
   },
   {
-    path: '/slide',
-    element: <SlideLayout />,
+    path: 'control',
+    element: <ControlLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        loader: () => redirect('/slide/1')
-      },
-      {
-        path: ':id',
-        element: <Slide />,
-        errorElement: <ErrorPage />
+        element: <>
+          <SlideControls />
+          <SlidePagination />
+        </>
       }
     ]
   },

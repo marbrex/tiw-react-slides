@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStoreState } from '../application/store/hooks'
 
-interface Props {
-  slideIndex: number
-  slidesCount: number
-}
+const SlidePagination: React.FC = () => {
 
-const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
+  const slideIndex = useStoreState(state => state.slideIndex)
+  const slidesCount = useStoreState(state => state.slidesCount)
+  const slideNumStore = useStoreState(state => state.slideIndex + 1)
+
   const [slideNum, setSlideNum] = React.useState<number>(slideIndex + 1)
   const [valid, setValid] = React.useState<boolean>(true)
   const [isBeingChanged, setIsBeingChanged] = React.useState<boolean>(false)
-  const slideNumStore = useStoreState(state => state.slideIndex + 1)
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (slideNum !== slideNumStore && !isBeingChanged) {
       setSlideNum(slideNumStore)
     }
@@ -24,10 +23,8 @@ const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
     const { valueAsNumber, min, max } = event.target
     if (isNaN(valueAsNumber) || valueAsNumber < Number(min) || valueAsNumber > Number(max)) {
       setValid(false)
-      event.target.classList.add('invalid-value')
     } else {
       setValid(true)
-      event.target.classList.remove('invalid-value')
     }
     setSlideNum(valueAsNumber)
   }
@@ -37,11 +34,14 @@ const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
     setIsBeingChanged(false)
     console.log('in handle on blur')
     if (valid) {
-      console.log(slideNum)
-      navigate(`/slide/${slideNum}`)
+      let slideNumAsInt = slideNum
+      if (!Number.isInteger(slideNum)) {
+        slideNumAsInt = Number.parseInt(slideNum.toString())
+      }
+      console.log(slideNumAsInt)
+      navigate(`/slide/${slideNumAsInt}`)
     } else {
       setSlideNum(slideIndex + 1)
-      event.target.classList.remove('invalid-value')
     }
   }
 
