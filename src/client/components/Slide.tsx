@@ -8,19 +8,21 @@ const Slide: React.FC = () => {
   const slidesCount = useStoreState(state => state.slidesCount)
 
   const routerParams = useParams()
-  if (routerParams?.id) {
-    const id = Number(routerParams.id)
-    const min = 1
-    const max = slidesCount
+  const setSlide = useStoreActions(state => state.setSlideIndex)
+  React.useEffect(() => {
+    if (routerParams?.id) {
+      const id = Number(routerParams.id)
+      const min = 1
+      const max = slidesCount
 
-    // Value validation
-    if (isNaN(id) || id < min || id > max) {
-      throw new Error('This slide does not exist')
+      // Value validation
+      if (isNaN(id) || id < min || id > max) {
+        throw new Error('This slide does not exist')
+      }
+
+      setSlide({ slideIndex: id - 1 })
     }
-
-    const setSlide = useStoreActions(state => state.setSlideIndex)
-    setSlide({ slideIndex: id - 1 })
-  }
+  }, [routerParams, slidesCount, setSlide])
 
   return (
     <div className='SlideShow'>

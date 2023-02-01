@@ -18,6 +18,13 @@ const SlidePagination: React.FC = () => {
     }
   }, [slideNum, slideNumStore])
 
+  const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (event.key === 'Enter') {
+      const htmlElement = event.target as HTMLElement
+      if (htmlElement?.blur) htmlElement.blur()
+    }
+  }
+
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setIsBeingChanged(true)
     const { valueAsNumber, min, max } = event.target
@@ -51,7 +58,8 @@ const SlidePagination: React.FC = () => {
         min={1} max={slidesCount}
         value={isNaN(slideNum) ? '' : slideNum}
         onChange={handleOnChange}
-        onBlur={handleOnBlur}/>
+        onBlur={handleOnBlur}
+        onKeyDown={handleOnKeyDown}/>
       <span> of {slidesCount}</span>
     </div>
   )
