@@ -1,5 +1,6 @@
-import React from 'react'
-import { useStoreActions } from '../application/store/hooks'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useStoreState } from '../application/store/hooks'
 
 interface Props {
   slideIndex: number
@@ -9,8 +10,13 @@ interface Props {
 const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
   const [slideNum, setSlideNum] = React.useState<number>(slideIndex + 1)
   const [valid, setValid] = React.useState<boolean>(true)
+  const slideNumStore = useStoreState(state => state.slideIndex + 1)
 
-  const setSlideIndex = useStoreActions(actions => actions.setSlideIndex)
+  useEffect(() => {
+    if (slideNum !== slideNumStore) {
+      setSlideNum(slideNumStore)
+    }
+  }, [slideNum, slideNumStore])
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { valueAsNumber, min, max } = event.target
@@ -25,8 +31,10 @@ const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
   }
 
   const handleOnBlur = (event: React.FocusEvent<HTMLInputElement, Element>): void => {
-    if (valid) setSlideIndex({ slideIndex: event.target.valueAsNumber - 1 })
-    else {
+    if (valid) {
+      const navigate = useNavigate()
+      navigate(`/slide/${event.target.valueAsNumber - 1}`)
+    } else {
       setSlideNum(slideIndex + 1)
       event.target.classList.remove('invalid-value')
     }

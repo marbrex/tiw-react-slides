@@ -1,12 +1,10 @@
 import * as React from 'react'
-import SlideShow from './components/SlideShow'
-import AppToolbar from './components/AppToolbar'
+import { Outlet } from 'react-router-dom'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <SlideShow />
-      <AppToolbar />
+    <div className='App'>
+      <Outlet />
     </div>
   )
 }

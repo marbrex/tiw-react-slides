@@ -7,7 +7,12 @@ const storeModel: SlideStoreModel = {
   slides: SLIDES,
   slideIndex: 0,
   slidesCount: computed(state => state.slides.length),
-  isVisible: computed(state => state.slides[state.slideIndex].visible),
+  isVisible: computed(state => {
+    if (state.slides[state.slideIndex]?.visible) {
+      return state.slides[state.slideIndex].visible
+    }
+    return false
+  }),
   slide: computed(state => state.slides[state.slideIndex]),
   nextSlide: action(state => {
     state.slideIndex = state.slideIndex < state.slides.length - 1 ? state.slideIndex + 1 : state.slideIndex

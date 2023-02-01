@@ -26,6 +26,8 @@
   "rules": {
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/no-confusing-void-expression": ["warn", { "ignoreArrowShorthand": true }],
-    "@typescript-eslint/no-floating-promises": "off"
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "padded-blocks": ["error", { "classes": "never" }]
   }
 }
