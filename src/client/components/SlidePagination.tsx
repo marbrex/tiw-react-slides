@@ -10,15 +10,17 @@ interface Props {
 const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
   const [slideNum, setSlideNum] = React.useState<number>(slideIndex + 1)
   const [valid, setValid] = React.useState<boolean>(true)
+  const [isBeingChanged, setIsBeingChanged] = React.useState<boolean>(false)
   const slideNumStore = useStoreState(state => state.slideIndex + 1)
 
   useEffect(() => {
-    if (slideNum !== slideNumStore) {
+    if (slideNum !== slideNumStore && !isBeingChanged) {
       setSlideNum(slideNumStore)
     }
   }, [slideNum, slideNumStore])
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setIsBeingChanged(true)
     const { valueAsNumber, min, max } = event.target
     if (isNaN(valueAsNumber) || valueAsNumber < Number(min) || valueAsNumber > Number(max)) {
       setValid(false)
@@ -30,10 +32,13 @@ const SlidePagination: React.FC<Props> = ({ slideIndex, slidesCount }) => {
     setSlideNum(valueAsNumber)
   }
 
+  const navigate = useNavigate()
   const handleOnBlur = (event: React.FocusEvent<HTMLInputElement, Element>): void => {
+    setIsBeingChanged(false)
+    console.log('in handle on blur')
     if (valid) {
-      const navigate = useNavigate()
-      navigate(`/slide/${event.target.valueAsNumber - 1}`)
+      console.log(slideNum)
+      navigate(`/slide/${slideNum}`)
     } else {
       setSlideNum(slideIndex + 1)
       event.target.classList.remove('invalid-value')

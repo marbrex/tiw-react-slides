@@ -32,3 +32,6 @@ dist/
 
 ########## PARCEL ##########
 .parcel-cache
+
+########## WEBSTORM ##########
+.idea

@@ -25,8 +25,8 @@ const Slide: React.FC = () => {
   return (
     <div className='SlideShow'>
       <div className={`Slide ${!isVisible ? 'invisible' : ''}`}>
-        <span className='Slide-title'>{slide?.title ? slide.title : 'UNDEFINED'}</span>
-        <span className='Slide-text'>{slide?.text ? slide.text : 'UNDEFINED'}</span>
+        <span className='Slide-title'>{slide.title}</span>
+        <span className='Slide-text'>{slide.text}</span>
       </div>
     </div>
   )

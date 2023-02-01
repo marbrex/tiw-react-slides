@@ -4,17 +4,6 @@ $bg-clr3: lighten($bg-clr, 15%);
 $slide-bg-clr: lighten($bg-clr, 15%);
 $txt-clr: lighten($bg-clr, 70%);
 
-body {
-  background-color: $bg-clr;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  width: 100vw;
-  height: 100vh;
-}
-
 @mixin flex($direction, $wrap, $jc, $ai) {
   display: flex;
   flex-direction: $direction;
@@ -23,131 +12,142 @@ body {
   align-items: $ai;
 }
 
+body {
+  background-color: $bg-clr;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  @include flex(column, nowrap, flex-end, center);
+  width: 100vw;
+  height: 100vh;
+}
+
 .App {
   @include flex(column, nowrap, flex-end, center);
   width: 100%;
   height: 100%;
+}
 
-  .AppToolbar {
-    @include flex(row, nowrap, flex-end, center);
-    height: min-content;
-    background-color: $bg-clr2;
-    color: $txt-clr;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    z-index: 999;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-                rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+.AppToolbar {
+  @include flex(row, nowrap, flex-end, center);
+  height: min-content;
+  background-color: $bg-clr2;
+  color: $txt-clr;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  z-index: 999;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+              rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
-    .SlideControls {
-      @include flex(row, wrap, center, center);
-    }
+  .SlideControls {
+    @include flex(row, wrap, center, center);
+  }
 
-    .SlidePagination {
+  .SlidePagination {
 
-      input[type=number] {
-        cursor: text;
-        width: 70px;
+    input[type=number] {
+      cursor: text;
+      width: 70px;
 
-        &:invalid {
-          border: 3px solid darken(crimson, 15%);
-        }
-
-        &:focus {
-          background-color: lighten($bg-clr3, 10%);
-        }
-
-        /* Disable arrows on Chrome, Safari, Edge, Opera */
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
+      &:invalid {
+        border: 3px solid darken(crimson, 15%);
       }
-    }
 
-    > * {
-      margin: 0 15px 0 0;
-    }
-
-    > *:last-child {
-      margin: 0;
-    }
-
-    button, input {
-      cursor: pointer;
-      outline: none;
-      color: $txt-clr;
-      height: 30px;
-      padding: 5px 10px;
-      box-sizing: border-box;
-      border: 1px solid $bg-clr;
-      border-radius: 2px;
-      background-color: $bg-clr3;
-      transition: .1s;
-
-      &:enabled:hover {
+      &:focus {
         background-color: lighten($bg-clr3, 10%);
       }
 
-      &:enabled:active {
-        background-color: lighten($bg-clr3, 20%);
-      }
-
-      &:disabled {
-        cursor: no-drop;
-        opacity: 0.5;
+      /* Disable arrows on Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
     }
-
   }
 
-  .SlideShow {
-    $slideMargin: 20px;
-  
-    @include flex(row, nowrap, center, center);
-    padding: calc($slideMargin * 1.8) $slideMargin;
+  > * {
+    margin: 0 15px 0 0;
+  }
+
+  > *:last-child {
+    margin: 0;
+  }
+
+  button, input {
+    cursor: pointer;
+    outline: none;
+    color: $txt-clr;
+    height: 30px;
+    padding: 5px 10px;
     box-sizing: border-box;
-    width: 100%;
-    height: 90%;
-    flex-grow: 1;
-  
-    .Slide {
-      width: 100%;
-      height: 100%;
-      margin: $slideMargin;
-      border-radius: 3px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      background-color: $slide-bg-clr;
-      font-size: 25px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-      display: grid;
-      grid-template-areas: 'title' 'text-content';
-      gap: 1em;
-      grid-template-rows: auto 2fr;
+    border: 1px solid $bg-clr;
+    border-radius: 2px;
+    background-color: $bg-clr3;
+    transition: .1s;
 
-      &.invisible {
-        opacity: 0.4;
-      }
-  
-      .Slide-title {
-        @include flex(row, nowrap, center, center);
-        grid-area: title;
-        padding: $slideMargin;
-        font-size: 1.5em;
-        font-weight: bold;
-      }
-  
-      .Slide-text {
-        @include flex(row, nowrap, center, flex-start);
-        grid-area: text-content;
-        padding: $slideMargin;
-        font-size: 1em;
-      }
-  
+    &:enabled:hover {
+      background-color: lighten($bg-clr3, 10%);
     }
-  
+
+    &:enabled:active {
+      background-color: lighten($bg-clr3, 20%);
+    }
+
+    &:disabled {
+      cursor: no-drop;
+      opacity: 0.5;
+    }
   }
-  
+
+}
+
+.SlideShow {
+  $slideMargin: 20px;
+
+  @include flex(row, nowrap, center, center);
+  padding: calc($slideMargin * 1.8) $slideMargin;
+  box-sizing: border-box;
+  width: 100%;
+  height: 90%;
+  flex-grow: 1;
+
+  .Slide {
+    width: 100%;
+    height: 100%;
+    margin: $slideMargin;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: $slide-bg-clr;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    display: grid;
+    grid-template-areas: 'title' 'text-content';
+    gap: 1em;
+    grid-template-rows: auto 2fr;
+
+    &.invisible {
+      opacity: 0.4;
+    }
+
+    .Slide-title {
+      @include flex(row, nowrap, center, center);
+      grid-area: title;
+      padding: $slideMargin;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .Slide-text {
+      @include flex(row, nowrap, center, flex-start);
+      grid-area: text-content;
+      padding: $slideMargin;
+      font-size: 1em;
+    }
+
+  }
+
 }
