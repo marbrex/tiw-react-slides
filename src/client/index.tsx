@@ -20,7 +20,7 @@ import ModeSelector from './components/ModeSelector'
 // (Use 'index=true' child to redirect to children)
 // ===================================
 
-const getSlideRoute = (showSlideNotes: boolean = true): RouteObject => {
+const getSlideRoute = (showSlideNotes: boolean = true, displayInvisible: boolean = true): RouteObject => {
   return {
     path: 'slide',
     element: <SlideLayout showSlideNotes={showSlideNotes}/>,
@@ -32,7 +32,7 @@ const getSlideRoute = (showSlideNotes: boolean = true): RouteObject => {
       },
       {
         path: ':id',
-        element: <Slide />,
+        element: <Slide displayInvisible={displayInvisible} />,
         errorElement: <ErrorPage />
       }
     ]
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
         index: true,
         loader: () => redirect('slide')
       },
-      getSlideRoute(false)
+      getSlideRoute(false, false)
     ]
   },
   {

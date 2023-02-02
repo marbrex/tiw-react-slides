@@ -260,11 +260,10 @@ button, input {
   height: 100%;
   position: relative;
 
-  .FullScreenButton {
+  .EditButton, .FullScreenButton {
     cursor: pointer;
     position: absolute;
     top: $present-margin;
-    right: $present-margin;
     opacity: .2;
     transition: opacity .2s;
     z-index: 999;
@@ -272,6 +271,14 @@ button, input {
     &:hover {
       opacity: .8;
     }
+  }
+
+  .EditButton {
+    left: $present-margin;
+  }
+
+  .FullScreenButton {
+    right: $present-margin;
   }
 
   .SlideControls {
