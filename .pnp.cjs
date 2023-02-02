@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
+            ["buffer", "npm:5.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["easy-peasy", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.2.0"],\
             ["eslint", "npm:8.32.0"],\
@@ -50,6 +51,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
+            ["socket.io", "npm:4.5.4"],\
+            ["socket.io-client", "npm:4.5.4"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
@@ -1329,6 +1332,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@socket.io/component-emitter", [\
+        ["npm:3.1.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@socket.io-component-emitter-npm-3.1.0-3f778351c2-8.zip/node_modules/@socket.io/component-emitter/",\
+          "packageDependencies": [\
+            ["@socket.io/component-emitter", "npm:3.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@swc/helpers", [\
         ["npm:0.4.14", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@swc-helpers-npm-0.4.14-f806c3fb16-8.zip/node_modules/@swc/helpers/",\
@@ -1409,6 +1421,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-connect-npm-3.4.35-7337eee0a3-8.zip/node_modules/@types/connect/",\
           "packageDependencies": [\
             ["@types/connect", "npm:3.4.35"],\
+            ["@types/node", "npm:18.11.18"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/cookie", [\
+        ["npm:0.4.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-cookie-npm-0.4.1-274a704dc6-8.zip/node_modules/@types/cookie/",\
+          "packageDependencies": [\
+            ["@types/cookie", "npm:0.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/cors", [\
+        ["npm:2.8.13", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-cors-npm-2.8.13-4b8ac1068f-8.zip/node_modules/@types/cors/",\
+          "packageDependencies": [\
+            ["@types/cors", "npm:2.8.13"],\
             ["@types/node", "npm:18.11.18"]\
           ],\
           "linkType": "HARD"\
@@ -2101,6 +2132,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["base64-js", [\
+        ["npm:1.5.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/base64-js-npm-1.5.1-b2f7275641-8.zip/node_modules/base64-js/",\
+          "packageDependencies": [\
+            ["base64-js", "npm:1.5.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["base64id", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/base64id-npm-2.0.0-ef4afeee0a-8.zip/node_modules/base64id/",\
+          "packageDependencies": [\
+            ["base64id", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["binary-extensions", [\
         ["npm:2.2.0", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/binary-extensions-npm-2.2.0-180c33fec7-8.zip/node_modules/binary-extensions/",\
@@ -2178,6 +2227,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["electron-to-chromium", "npm:1.4.284"],\
             ["node-releases", "npm:2.0.8"],\
             ["update-browserslist-db", "virtual:7d64a96afc8cf9b31b95951ccc2f47931d0cf97faa526fd0d20448bf2c73ddf9f5ef9e5cd28839ae8b5791451df45079a407b3f4978367b4210748169f5848f6#npm:1.0.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["buffer", [\
+        ["npm:5.7.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/buffer-npm-5.7.1-513ef8259e-8.zip/node_modules/buffer/",\
+          "packageDependencies": [\
+            ["buffer", "npm:5.7.1"],\
+            ["base64-js", "npm:1.5.1"],\
+            ["ieee754", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2437,6 +2497,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["cookie", [\
+        ["npm:0.4.2", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/cookie-npm-0.4.2-7761894d5f-8.zip/node_modules/cookie/",\
+          "packageDependencies": [\
+            ["cookie", "npm:0.4.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.5.0", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/cookie-npm-0.5.0-e2d58a161a-8.zip/node_modules/cookie/",\
           "packageDependencies": [\
@@ -2450,6 +2517,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/cookie-signature-npm-1.0.6-93f325f7f0-8.zip/node_modules/cookie-signature/",\
           "packageDependencies": [\
             ["cookie-signature", "npm:1.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["cors", [\
+        ["npm:2.8.5", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/cors-npm-2.8.5-c9935a2d12-8.zip/node_modules/cors/",\
+          "packageDependencies": [\
+            ["cors", "npm:2.8.5"],\
+            ["object-assign", "npm:4.1.1"],\
+            ["vary", "npm:1.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2854,6 +2932,48 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["encoding", "npm:0.1.13"],\
             ["iconv-lite", "npm:0.6.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["engine.io", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/engine.io-npm-6.2.1-1486b58c4b-8.zip/node_modules/engine.io/",\
+          "packageDependencies": [\
+            ["engine.io", "npm:6.2.1"],\
+            ["@types/cookie", "npm:0.4.1"],\
+            ["@types/cors", "npm:2.8.13"],\
+            ["@types/node", "npm:18.11.18"],\
+            ["accepts", "npm:1.3.8"],\
+            ["base64id", "npm:2.0.0"],\
+            ["cookie", "npm:0.4.2"],\
+            ["cors", "npm:2.8.5"],\
+            ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"],\
+            ["engine.io-parser", "npm:5.0.6"],\
+            ["ws", "virtual:971a75cbbb426f0eadd0dad6a3b1bec644f61bb952bc942758e7b45fb1b7ac4fe91b50ca41f8eb4f6ec4f485dbfcee1301c4318e3f3164d7b99a7b033035f830#npm:8.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["engine.io-client", [\
+        ["npm:6.2.3", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/engine.io-client-npm-6.2.3-971a75cbbb-8.zip/node_modules/engine.io-client/",\
+          "packageDependencies": [\
+            ["engine.io-client", "npm:6.2.3"],\
+            ["@socket.io/component-emitter", "npm:3.1.0"],\
+            ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"],\
+            ["engine.io-parser", "npm:5.0.6"],\
+            ["ws", "virtual:971a75cbbb426f0eadd0dad6a3b1bec644f61bb952bc942758e7b45fb1b7ac4fe91b50ca41f8eb4f6ec4f485dbfcee1301c4318e3f3164d7b99a7b033035f830#npm:8.2.3"],\
+            ["xmlhttprequest-ssl", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["engine.io-parser", [\
+        ["npm:5.0.6", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/engine.io-parser-npm-5.0.6-6021cc2c82-8.zip/node_modules/engine.io-parser/",\
+          "packageDependencies": [\
+            ["engine.io-parser", "npm:5.0.6"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4104,6 +4224,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["iconv-lite", "npm:0.6.3"],\
             ["safer-buffer", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ieee754", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/ieee754-npm-1.2.1-fb63b3caeb-8.zip/node_modules/ieee754/",\
+          "packageDependencies": [\
+            ["ieee754", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6099,6 +6228,54 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["socket.io", [\
+        ["npm:4.5.4", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/socket.io-npm-4.5.4-888fc15f6d-8.zip/node_modules/socket.io/",\
+          "packageDependencies": [\
+            ["socket.io", "npm:4.5.4"],\
+            ["accepts", "npm:1.3.8"],\
+            ["base64id", "npm:2.0.0"],\
+            ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"],\
+            ["engine.io", "npm:6.2.1"],\
+            ["socket.io-adapter", "npm:2.4.0"],\
+            ["socket.io-parser", "npm:4.2.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["socket.io-adapter", [\
+        ["npm:2.4.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/socket.io-adapter-npm-2.4.0-36a74a6ea1-8.zip/node_modules/socket.io-adapter/",\
+          "packageDependencies": [\
+            ["socket.io-adapter", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["socket.io-client", [\
+        ["npm:4.5.4", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/socket.io-client-npm-4.5.4-201041b748-8.zip/node_modules/socket.io-client/",\
+          "packageDependencies": [\
+            ["socket.io-client", "npm:4.5.4"],\
+            ["@socket.io/component-emitter", "npm:3.1.0"],\
+            ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"],\
+            ["engine.io-client", "npm:6.2.3"],\
+            ["socket.io-parser", "npm:4.2.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["socket.io-parser", [\
+        ["npm:4.2.2", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/socket.io-parser-npm-4.2.2-22f4e4a017-8.zip/node_modules/socket.io-parser/",\
+          "packageDependencies": [\
+            ["socket.io-parser", "npm:4.2.2"],\
+            ["@socket.io/component-emitter", "npm:3.1.0"],\
+            ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["socks", [\
         ["npm:2.7.1", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/socks-npm-2.7.1-17f2b53052-8.zip/node_modules/socks/",\
@@ -6389,6 +6566,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
+            ["buffer", "npm:5.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["easy-peasy", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.2.0"],\
             ["eslint", "npm:8.32.0"],\
@@ -6404,6 +6582,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
+            ["socket.io", "npm:4.5.4"],\
+            ["socket.io-client", "npm:4.5.4"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
@@ -6833,6 +7013,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/wrappy-npm-1.0.2-916de4d4b3-8.zip/node_modules/wrappy/",\
           "packageDependencies": [\
             ["wrappy", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ws", [\
+        ["npm:8.2.3", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/ws-npm-8.2.3-03a35b8ad7-8.zip/node_modules/ws/",\
+          "packageDependencies": [\
+            ["ws", "npm:8.2.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:971a75cbbb426f0eadd0dad6a3b1bec644f61bb952bc942758e7b45fb1b7ac4fe91b50ca41f8eb4f6ec4f485dbfcee1301c4318e3f3164d7b99a7b033035f830#npm:8.2.3", {\
+          "packageLocation": "./.yarn/__virtual__/ws-virtual-6162973371/3/AppData/Local/Yarn/Berry/cache/ws-npm-8.2.3-03a35b8ad7-8.zip/node_modules/ws/",\
+          "packageDependencies": [\
+            ["ws", "virtual:971a75cbbb426f0eadd0dad6a3b1bec644f61bb952bc942758e7b45fb1b7ac4fe91b50ca41f8eb4f6ec4f485dbfcee1301c4318e3f3164d7b99a7b033035f830#npm:8.2.3"],\
+            ["@types/bufferutil", null],\
+            ["@types/utf-8-validate", null],\
+            ["bufferutil", null],\
+            ["utf-8-validate", null]\
+          ],\
+          "packagePeers": [\
+            "@types/bufferutil",\
+            "@types/utf-8-validate",\
+            "bufferutil",\
+            "utf-8-validate"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["xmlhttprequest-ssl", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/xmlhttprequest-ssl-npm-2.0.0-a9c0d5efed-8.zip/node_modules/xmlhttprequest-ssl/",\
+          "packageDependencies": [\
+            ["xmlhttprequest-ssl", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
