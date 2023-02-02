@@ -10,6 +10,7 @@ export interface SlideStoreModel {
   nextSlide: Action<SlideStoreModel>
   previousSlide: Action<SlideStoreModel>
   setSlideIndex: Action<SlideStoreModel, SetSlideAction>
+  setSlideNotes: Action<SlideStoreModel, string>
   toggleSlideVisibility: Action<SlideStoreModel>
 }
 

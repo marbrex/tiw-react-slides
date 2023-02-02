@@ -25,11 +25,9 @@ const Slide: React.FC = () => {
   }, [routerParams, slidesCount, setSlide])
 
   return (
-    <div className='SlideShow'>
-      <div className={`Slide ${!isVisible ? 'invisible' : ''}`}>
-        <span className='Slide-title'>{slide.title}</span>
-        <span className='Slide-text'>{slide.text}</span>
-      </div>
+    <div className={`Slide ${!isVisible ? 'invisible' : ''}`}>
+      <span className='Slide-title'>{slide.title}</span>
+      <span className='Slide-text'>{slide.text}</span>
     </div>
   )
 }

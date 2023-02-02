@@ -39,13 +39,11 @@ const SlidePagination: React.FC = () => {
   const navigate = useNavigate()
   const handleOnBlur = (event: React.FocusEvent<HTMLInputElement, Element>): void => {
     setIsBeingChanged(false)
-    console.log('in handle on blur')
     if (valid) {
       let slideNumAsInt = slideNum
       if (!Number.isInteger(slideNum)) {
         slideNumAsInt = Number.parseInt(slideNum.toString())
       }
-      console.log(slideNumAsInt)
       navigate(`/slide/${slideNumAsInt}`)
     } else {
       setSlideNum(slideIndex + 1)

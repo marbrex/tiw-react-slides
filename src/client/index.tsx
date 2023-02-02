@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom'
 import store from './application/store'
 import { StoreProvider } from 'easy-peasy'
-import App from './App'
 import ErrorPage from './routes/ErrorPage'
 import SlideLayout from './components/SlideLayout'
 import Slide from './components/Slide'
@@ -11,6 +10,7 @@ import SlideControls from './components/SlideControls'
 import SlidePagination from './components/SlidePagination'
 import ControlLayout from './components/ControlLayout'
 import { isMobile } from 'react-device-detect'
+import AppLayout from './components/AppLayout'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       if (isMobile) return redirect('/control')
       return null
     },
-    element: <App />,
+    element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
       {

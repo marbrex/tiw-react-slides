@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Outlet } from 'react-router-dom'
-import AppToolbar from './AppToolbar'
+import SlideNotes from './SlideNotes'
 
 const SlideLayout: React.FC = () => {
   return (
-    <>
+    <div className='SlideLayout'>
       <Outlet />
-      <AppToolbar />
-    </>
+      <SlideNotes />
+    </div>
   )
 }
 

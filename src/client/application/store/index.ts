@@ -23,6 +23,9 @@ const storeModel: SlideStoreModel = {
   setSlideIndex: action((state, payload) => {
     state.slideIndex = payload.slideIndex
   }),
+  setSlideNotes: action((state, payload) => {
+    state.slides[state.slideIndex].notes = payload
+  }),
   toggleSlideVisibility: action(state => {
     state.slides[state.slideIndex].visible = !state.slides[state.slideIndex].visible
   })
