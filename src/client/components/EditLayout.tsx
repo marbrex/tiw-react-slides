@@ -2,13 +2,13 @@ import * as React from 'react'
 import { Outlet } from 'react-router-dom'
 import AppToolbar from './AppToolbar'
 
-const AppLayout: React.FC = () => {
+const EditLayout: React.FC = () => {
   return (
-    <div className='AppLayout'>
+    <div className='EditLayout'>
       <Outlet />
       <AppToolbar />
     </div>
   )
 }
 
-export default AppLayout
+export default EditLayout

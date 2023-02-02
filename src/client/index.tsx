@@ -10,7 +10,7 @@ import SlideControls from './components/SlideControls'
 import SlidePagination from './components/SlidePagination'
 import ControlLayout from './components/ControlLayout'
 import { isMobile } from 'react-device-detect'
-import AppLayout from './components/AppLayout'
+import EditLayout from './components/EditLayout'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       if (isMobile) return redirect('/control')
       return null
     },
-    element: <AppLayout />,
+    element: <EditLayout />,
     errorElement: <ErrorPage />,
     children: [
       {

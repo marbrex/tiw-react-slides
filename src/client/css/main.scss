@@ -34,12 +34,12 @@ body {
   box-sizing: border-box;
 }
 
-.AppLayout, .SlideLayout {
+.EditLayout, .SlideLayout {
   width: 100%;
   height: 100%;
 }
 
-.AppLayout {
+.EditLayout {
 
   @include flex(column, nowrap, flex-end, center);
 
