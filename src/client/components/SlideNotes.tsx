@@ -41,8 +41,8 @@ const SlideNotes: React.FC = () => {
     }
   }
 
-  const handleOnBlur = (event: React.FocusEvent<HTMLTextAreaElement, Element>): void => {
-    // console.log('IN BLUR')
+  const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    // console.log('ON CHANGE')
     setSlideNotes(event.target.value)
   }
 
@@ -56,8 +56,8 @@ const SlideNotes: React.FC = () => {
         </div>
         <textarea cols={30} rows={10}
           placeholder='Type your notes here...'
-          defaultValue={slide.notes}
-          onBlur={handleOnBlur}>
+          value={slide.notes}
+          onChange={handleOnChange}>
         </textarea>
       </div>
     </>
