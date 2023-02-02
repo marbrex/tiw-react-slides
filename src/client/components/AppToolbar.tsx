@@ -3,6 +3,7 @@ import { useStoreActions } from '../application/store/hooks'
 import SlidePagination from './SlidePagination'
 import SlideControls from './SlideControls'
 import FullScreenButton from './FullScreenButton'
+import PresentButton from './PresentButton'
 
 const AppToolbar: React.FC = (): JSX.Element => {
   const toggleSlideVisibility = useStoreActions(actions => actions.toggleSlideVisibility)
@@ -13,6 +14,7 @@ const AppToolbar: React.FC = (): JSX.Element => {
       <SlideControls />
       <SlidePagination />
       <FullScreenButton />
+      <PresentButton />
     </div>
   )
 }

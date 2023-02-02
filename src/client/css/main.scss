@@ -53,10 +53,12 @@ body {
 
   .AppToolbar {
 
-    @include flex(row, nowrap, center, center);
+    @include flex(row, nowrap, center, stretch);
     height: min-content;
     width: 100%;
     border-radius: 3px;
+    overflow-y: hidden;
+    overflow-x: auto;
 
     padding: 10px 15px;
     box-sizing: border-box;
@@ -72,6 +74,18 @@ body {
     }
   
     .SlidePagination {
+
+      @include flex(row, nowrap, center, center);
+      align-content: center;
+      min-width: max-content;
+
+      > * {
+        margin: 0 5px 0 0;
+      }
+    
+      > *:last-child {
+        margin: 0;
+      }  
   
       input[type=number] {
         cursor: text;
@@ -106,7 +120,6 @@ body {
       cursor: pointer;
       outline: none;
       color: $txt-clr;
-      height: 30px;
       padding: 5px 10px;
       box-sizing: border-box;
       border: 1px solid $bg-clr;
