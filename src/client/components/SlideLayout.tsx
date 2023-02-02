@@ -2,11 +2,15 @@ import * as React from 'react'
 import { Outlet } from 'react-router-dom'
 import SlideNotes from './SlideNotes'
 
-const SlideLayout: React.FC = () => {
+interface Props {
+  showSlideNotes?: boolean
+}
+
+const SlideLayout: React.FC<Props> = ({ showSlideNotes = true }) => {
   return (
     <div className='SlideLayout'>
       <Outlet />
-      <SlideNotes />
+      { showSlideNotes && <SlideNotes /> }
     </div>
   )
 }

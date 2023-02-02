@@ -14,12 +14,12 @@ const SlideControls: React.FC = () => {
     <div className='SlideControls'>
       <button className='prev-slide-btn' type="button" onClick={() => {
         const nextSlideNum: number = slideIndex
-        navigate(`/slide/${nextSlideNum}`)
+        navigate(`slide/${nextSlideNum}`)
         Events.emitSlideChanged(nextSlideNum)
       }} disabled={slideIndex === 0}>Prev</button>
       <button className='next-slide-btn' type="button" onClick={() => {
         const nextSlideNum: number = slideIndex + 2
-        navigate(`/slide/${nextSlideNum}`)
+        navigate(`slide/${nextSlideNum}`)
         Events.emitSlideChanged(nextSlideNum)
       }} disabled={slideIndex === slidesCount - 1}>Next</button>
     </div>

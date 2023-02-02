@@ -44,7 +44,7 @@ const SlidePagination: React.FC = () => {
       if (!Number.isInteger(slideNum)) {
         slideNumAsInt = Number.parseInt(slideNum.toString())
       }
-      navigate(`/slide/${slideNumAsInt}`)
+      navigate(`slide/${slideNumAsInt}`)
     } else {
       setSlideNum(slideIndex + 1)
     }
