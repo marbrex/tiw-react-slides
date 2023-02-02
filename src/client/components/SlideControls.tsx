@@ -10,18 +10,27 @@ const SlideControls: React.FC = () => {
 
   const navigate = useNavigate()
 
+  const onClickPrev = (): void => {
+    const nextSlideNum: number = slideIndex
+    navigate(`slide/${nextSlideNum}`)
+    Events.emitSlideChanged(nextSlideNum)
+  }
+
+  const onClickNext = (): void => {
+    const nextSlideNum: number = slideIndex + 2
+    navigate(`slide/${nextSlideNum}`)
+    Events.emitSlideChanged(nextSlideNum)
+  }
   return (
     <div className='SlideControls'>
-      <button className='prev-slide-btn' type="button" onClick={() => {
-        const nextSlideNum: number = slideIndex
-        navigate(`slide/${nextSlideNum}`)
-        Events.emitSlideChanged(nextSlideNum)
-      }} disabled={slideIndex === 0}>Prev</button>
-      <button className='next-slide-btn' type="button" onClick={() => {
-        const nextSlideNum: number = slideIndex + 2
-        navigate(`slide/${nextSlideNum}`)
-        Events.emitSlideChanged(nextSlideNum)
-      }} disabled={slideIndex === slidesCount - 1}>Next</button>
+      <button className='prev-slide-btn' type="button"
+        onClick={onClickPrev} disabled={slideIndex === 0}>
+        {'<'}
+      </button>
+      <button className='next-slide-btn' type="button"
+        onClick={onClickNext} disabled={slideIndex === slidesCount - 1}>
+        {'>'}
+      </button>
     </div>
   )
 }

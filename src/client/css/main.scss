@@ -69,45 +69,6 @@ body {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
                 rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   
-    .SlideControls {
-      @include flex(row, wrap, center, center);
-    }
-  
-    .SlidePagination {
-
-      @include flex(row, nowrap, center, center);
-      align-content: center;
-      min-width: max-content;
-
-      > * {
-        margin: 0 5px 0 0;
-      }
-    
-      > *:last-child {
-        margin: 0;
-      }  
-  
-      input[type=number] {
-        cursor: text;
-        width: 70px;
-  
-        &:invalid {
-          border: 3px solid darken(crimson, 15%);
-        }
-  
-        &:focus {
-          background-color: lighten($bg-clr3, 10%);
-        }
-  
-        /* Disable arrows on Chrome, Safari, Edge, Opera */
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-      }
-    }
-  
     > * {
       margin: 0 15px 0 0;
     }
@@ -116,31 +77,72 @@ body {
       margin: 0;
     }
   
-    button, input {
-      cursor: pointer;
-      outline: none;
-      color: $txt-clr;
-      padding: 5px 10px;
-      box-sizing: border-box;
-      border: 1px solid $bg-clr;
-      border-radius: 2px;
-      background-color: $bg-clr3;
-      transition: .1s;
-  
-      &:enabled:hover {
-        background-color: lighten($bg-clr3, 10%);
-      }
-  
-      &:enabled:active {
-        background-color: lighten($bg-clr3, 20%);
-      }
-  
-      &:disabled {
-        cursor: no-drop;
-        opacity: 0.5;
-      }
+  }
+}
+
+.SlideControls {
+  @include flex(row, wrap, space-between, center);
+  box-sizing: border-box;
+}
+
+button, input {
+  cursor: pointer;
+  outline: none;
+  color: $txt-clr;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid $bg-clr;
+  border-radius: 2px;
+  background-color: $bg-clr3;
+  transition: .1s;
+
+  &:enabled:hover {
+    background-color: lighten($bg-clr3, 10%);
+  }
+
+  &:enabled:active {
+    background-color: lighten($bg-clr3, 20%);
+  }
+
+  &:disabled {
+    cursor: no-drop;
+    opacity: 0.5;
+  }
+}
+
+.SlidePagination {
+
+  @include flex(row, nowrap, center, center);
+  align-content: center;
+  min-width: max-content;
+  color: $txt-clr;
+
+  > * {
+    margin: 0 5px 0 0;
+  }
+
+  > *:last-child {
+    margin: 0;
+  }  
+
+  input[type=number] {
+    cursor: text;
+    width: 70px;
+
+    &:invalid {
+      border: 3px solid darken(crimson, 15%);
     }
-  
+
+    &:focus {
+      background-color: lighten($bg-clr3, 10%);
+    }
+
+    /* Disable arrows on Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 }
 
@@ -252,6 +254,7 @@ body {
 }
 
 .PresentLayout {
+  $present-margin: 10px;
 
   width: 100%;
   height: 100%;
@@ -260,14 +263,56 @@ body {
   .FullScreenButton {
     cursor: pointer;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: $present-margin;
+    right: $present-margin;
     opacity: .2;
     transition: opacity .2s;
     z-index: 999;
 
     &:hover {
       opacity: .8;
+    }
+  }
+
+  .SlideControls {
+    position: absolute;
+    // width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: $present-margin;
+    
+    > button {
+      width: 40px;
+      height: 40px;
+      opacity: .4;
+      transition: opacity .2s;
+
+      &:not(:disabled):hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .SlidePagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: $present-margin;
+    
+    > * {
+      opacity: .4;
+    }
+
+    > input {
+      transition: opacity .2s;
+
+      &:not(:disabled):hover {
+        opacity: .8;
+
+        * & {
+          opacity: .8;
+        }
+      }
     }
   }
 
