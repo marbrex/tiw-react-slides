@@ -29,11 +29,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@parcel/transformer-sass", "npm:2.8.3"],\
+            ["@reduxjs/toolkit", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:1.9.2"],\
             ["@types/express", "npm:4.17.15"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
+            ["@types/redux-logger", "npm:3.0.9"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
             ["buffer", "npm:5.7.1"],\
             ["dotenv", "npm:16.0.3"],\
@@ -51,6 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
+            ["redux-logger", "npm:3.0.6"],\
             ["socket.io", "npm:4.5.4"],\
             ["socket.io-client", "npm:4.5.4"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\
@@ -1323,6 +1326,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@reduxjs/toolkit", [\
+        ["npm:1.9.2", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@reduxjs-toolkit-npm-1.9.2-69e0fa940a-8.zip/node_modules/@reduxjs/toolkit/",\
+          "packageDependencies": [\
+            ["@reduxjs/toolkit", "npm:1.9.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:1.9.2", {\
+          "packageLocation": "./.yarn/__virtual__/@reduxjs-toolkit-virtual-fa94a49e06/3/AppData/Local/Yarn/Berry/cache/@reduxjs-toolkit-npm-1.9.2-69e0fa940a-8.zip/node_modules/@reduxjs/toolkit/",\
+          "packageDependencies": [\
+            ["@reduxjs/toolkit", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:1.9.2"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["@types/react-redux", null],\
+            ["immer", "npm:9.0.19"],\
+            ["react", "npm:18.2.0"],\
+            ["react-redux", null],\
+            ["redux", "npm:4.2.1"],\
+            ["redux-thunk", "virtual:fa94a49e06f2ea79e14474cd4305d67f1c52b1106909ceb6d2864e91851043a48583ad710a25df4389cb2aa7ece53016beb97ff54edd27e60b8bd98ca30b05f4#npm:2.4.2"],\
+            ["reselect", "npm:4.1.7"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-redux",\
+            "@types/react",\
+            "react-redux",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@remix-run/router", [\
         ["npm:1.3.0", {\
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@remix-run-router-npm-1.3.0-0f8f725247-8.zip/node_modules/@remix-run/router/",\
@@ -1592,6 +1625,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/history", "npm:4.7.11"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-router", "npm:5.1.20"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/redux-logger", [\
+        ["npm:3.0.9", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-redux-logger-npm-3.0.9-ac1d3f05fb-8.zip/node_modules/@types/redux-logger/",\
+          "packageDependencies": [\
+            ["@types/redux-logger", "npm:3.0.9"],\
+            ["redux", "npm:4.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2681,6 +2724,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/supports-color",\
             "supports-color"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["deep-diff", [\
+        ["npm:0.3.8", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/deep-diff-npm-0.3.8-a2a66d74dd-8.zip/node_modules/deep-diff/",\
+          "packageDependencies": [\
+            ["deep-diff", "npm:0.3.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5918,6 +5970,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.20.13"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.2.1", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/redux-npm-4.2.1-e7e2cf2e37-8.zip/node_modules/redux/",\
+          "packageDependencies": [\
+            ["redux", "npm:4.2.1"],\
+            ["@babel/runtime", "npm:7.20.13"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["redux-logger", [\
+        ["npm:3.0.6", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/redux-logger-npm-3.0.6-4c0c652262-8.zip/node_modules/redux-logger/",\
+          "packageDependencies": [\
+            ["redux-logger", "npm:3.0.6"],\
+            ["deep-diff", "npm:0.3.8"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["redux-thunk", [\
@@ -5934,6 +6004,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["redux-thunk", "virtual:d9482a950dc9fcd800fca0b65f03fd6d20fc6ccffbc648672ca9c8aa3205148c12e0554df6142c83739d9d6e19b078672011096040f9b4cc901b12df1804027b#npm:2.4.2"],\
             ["@types/redux", null],\
             ["redux", "npm:4.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/redux",\
+            "redux"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:fa94a49e06f2ea79e14474cd4305d67f1c52b1106909ceb6d2864e91851043a48583ad710a25df4389cb2aa7ece53016beb97ff54edd27e60b8bd98ca30b05f4#npm:2.4.2", {\
+          "packageLocation": "./.yarn/__virtual__/redux-thunk-virtual-89491aa1c7/3/AppData/Local/Yarn/Berry/cache/redux-thunk-npm-2.4.2-3acdaaf7b0-8.zip/node_modules/redux-thunk/",\
+          "packageDependencies": [\
+            ["redux-thunk", "virtual:fa94a49e06f2ea79e14474cd4305d67f1c52b1106909ceb6d2864e91851043a48583ad710a25df4389cb2aa7ece53016beb97ff54edd27e60b8bd98ca30b05f4#npm:2.4.2"],\
+            ["@types/redux", null],\
+            ["redux", "npm:4.2.1"]\
           ],\
           "packagePeers": [\
             "@types/redux",\
@@ -5968,6 +6051,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../AppData/Local/Yarn/Berry/cache/regexpp-npm-3.2.0-2513f32cfc-8.zip/node_modules/regexpp/",\
           "packageDependencies": [\
             ["regexpp", "npm:3.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["reselect", [\
+        ["npm:4.1.7", {\
+          "packageLocation": "../../AppData/Local/Yarn/Berry/cache/reselect-npm-4.1.7-c37108c640-8.zip/node_modules/reselect/",\
+          "packageDependencies": [\
+            ["reselect", "npm:4.1.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6560,11 +6652,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["tiw-react-slides", "workspace:."],\
             ["@parcel/transformer-sass", "npm:2.8.3"],\
+            ["@reduxjs/toolkit", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:1.9.2"],\
             ["@types/express", "npm:4.17.15"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
+            ["@types/redux-logger", "npm:3.0.9"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:5.48.2"],\
             ["buffer", "npm:5.7.1"],\
             ["dotenv", "npm:16.0.3"],\
@@ -6582,6 +6676,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-device-detect", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:2.2.2"],\
             ["react-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:18.2.0"],\
             ["react-router-dom", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:6.7.0"],\
+            ["redux-logger", "npm:3.0.6"],\
             ["socket.io", "npm:4.5.4"],\
             ["socket.io-client", "npm:4.5.4"],\
             ["ts-node", "virtual:c59d2cc4141d2e1f92b10f9f25f1197ce278a7aedeaf08f4e66d6e2e6ed4115f6290458b24738eafaeaf2a2d30bc8ee8ac2fa46671e5b61f7207cd05240bf212#npm:10.9.1"],\

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStoreState } from '../application/store/hooks'
-import Events from '../events'
 
 const SlideControls: React.FC = () => {
 
@@ -13,14 +12,13 @@ const SlideControls: React.FC = () => {
   const onClickPrev = (): void => {
     const nextSlideNum: number = slideIndex
     navigate(`slide/${nextSlideNum}`)
-    Events.emitSlideChanged(nextSlideNum)
   }
 
   const onClickNext = (): void => {
     const nextSlideNum: number = slideIndex + 2
     navigate(`slide/${nextSlideNum}`)
-    Events.emitSlideChanged(nextSlideNum)
   }
+
   return (
     <div className='SlideControls'>
       <button className='prev-slide-btn' type="button"

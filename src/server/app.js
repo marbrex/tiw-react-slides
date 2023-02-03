@@ -31,9 +31,9 @@ io.on('connection', socket => {
     console.log('user disconnected')
   })
 
-  socket.on('slide changed', msg => {
-    console.log('slide changed', msg)
-    socket.broadcast.emit('slide changed', msg)
+  socket.on('slideChanged', msg => {
+    console.log('slideChanged', msg)
+    socket.broadcast.emit('slideChanged', msg)
   })
 })
 
