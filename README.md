@@ -27,6 +27,28 @@ make
 
 > P.S. **Yarn** (version >= 2) doit être installé au préalable.
 
+### Commandes utiles
+
+Build le client (bundle avec Parcel)
+```shell
+yarn client-build
+```
+
+Lancer un serveur de développement (côté front) avec Parcel
+```shell
+yarn client-dev
+```
+
+Démarrer le serveur Node/Express
+```shell
+yarn server-up
+```
+
+Lint le code (ESLint)
+```shell
+yarn lint
+```
+
 Modules externes utilisés dans le projet
 ---
 
