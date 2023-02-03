@@ -25,7 +25,7 @@ Pour installer les dépendances, build le client et lancer le serveur:
 make
 ```
 
-> P.S. **Yarn** doit être installé au préalable.
+> P.S. **Yarn** (version >= 2) doit être installé au préalable.
 
 Modules externes utilisés dans le projet
 ---
