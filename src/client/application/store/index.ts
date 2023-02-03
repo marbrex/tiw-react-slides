@@ -1,11 +1,10 @@
-import { action, computed, createStore, thunk } from 'easy-peasy'
+import { action, computed, createStore } from 'easy-peasy'
 import SLIDES from '../../slides'
 import { SlideStoreModel } from './model'
 import { Middleware, Dispatch, AnyAction } from '@reduxjs/toolkit'
 import socket from '../../websocket'
 import Events from '../../websocket/events'
 import Listeners from '../../websocket/listeners'
-import { redirect } from 'react-router-dom'
 
 const storeModel: SlideStoreModel = {
   name: 'slidesApp',
@@ -24,10 +23,6 @@ const storeModel: SlideStoreModel = {
   }),
   previousSlide: action(state => {
     state.slideIndex = state.slideIndex > 0 ? state.slideIndex - 1 : state.slideIndex
-  }),
-  setSlide: thunk((actions, payload) => {
-    actions.setSlideIndex({ slideIndex: payload.slideNum - 1 })
-    if (payload.navigate) redirect(`slide/${payload.slideNum}`)
   }),
   setSlideIndex: action((state, payload) => {
     state.slideIndex = payload.slideIndex

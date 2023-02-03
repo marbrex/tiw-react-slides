@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useStoreActions, useStoreState } from '../application/store/hooks'
 
 const SlidePagination: React.FC = () => {
@@ -7,8 +7,9 @@ const SlidePagination: React.FC = () => {
   const slideIndex = useStoreState(state => state.slideIndex)
   const slidesCount = useStoreState(state => state.slidesCount)
   const slideNumStore = useStoreState(state => state.slideIndex + 1)
-  const setSlide = useStoreActions(state => state.setSlide)
+  const setSlideIndex = useStoreActions(state => state.setSlideIndex)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const [slideNum, setSlideNum] = React.useState<number>(slideIndex + 1)
   const [valid, setValid] = React.useState<boolean>(true)
@@ -47,7 +48,11 @@ const SlidePagination: React.FC = () => {
       }
 
       const path = location.pathname.split('/').filter(x => x !== '').at(0)
-      setSlide({ slideNum: slideNumAsInt, navigate: path !== 'control' })
+      if (path === 'control') {
+        setSlideIndex({ slideIndex: slideNumAsInt - 1 })
+      } else {
+        navigate(`slide/${slideNumAsInt}`)
+      }
 
     } else {
       setSlideNum(slideIndex + 1)
