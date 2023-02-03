@@ -6,13 +6,12 @@ import { StoreProvider } from 'easy-peasy'
 import ErrorPage from './routes/ErrorPage'
 import SlideLayout from './components/SlideLayout'
 import Slide from './components/Slide'
-import SlideControls from './components/SlideControls'
-import SlidePagination from './components/SlidePagination'
 import ControlLayout from './components/ControlLayout'
 import { isMobile } from 'react-device-detect'
 import EditLayout from './components/EditLayout'
 import PresentLayout from './components/PresentLayout'
 import ModeSelector from './components/ModeSelector'
+import SlideNotes from './components/SlideNotes'
 
 // ============ Attention ============
 // Redirects must should only be provided with paths to siblings,
@@ -72,10 +71,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <>
-          <SlideControls />
-          <SlidePagination />
-        </>
+        element: <SlideNotes readOnly />
       }
     ]
   },

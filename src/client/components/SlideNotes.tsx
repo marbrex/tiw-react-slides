@@ -1,7 +1,11 @@
 import React from 'react'
 import { useStoreActions, useStoreState } from '../application/store/hooks'
 
-const SlideNotes: React.FC = () => {
+interface Props {
+  readOnly?: boolean
+}
+
+const SlideNotes: React.FC<Props> = ({ readOnly = false }) => {
 
   const slide = useStoreState(state => state.slide)
   const setSlideNotes = useStoreActions(state => state.setSlideNotes)
@@ -49,15 +53,19 @@ const SlideNotes: React.FC = () => {
   return (
     <>
       <div className='SlideNotes'>
-        <div className='ResizeBar' draggable
-          onDragStart={handleOnDragStart}
-          onDrag={handleOnDrag}
-          onDragEnd={handleOnDragEnd}>
-        </div>
+        {
+          !readOnly &&
+          <div className='ResizeBar' draggable
+            onDragStart={handleOnDragStart}
+            onDrag={handleOnDrag}
+            onDragEnd={handleOnDragEnd}>
+          </div>
+        }
         <textarea cols={30} rows={10}
-          placeholder='Type your notes here...'
+          placeholder={readOnly ? 'No Notes' : 'Type your notes here...'}
           value={slide.notes}
-          onChange={handleOnChange}>
+          onChange={handleOnChange}
+          readOnly={readOnly}>
         </textarea>
       </div>
     </>

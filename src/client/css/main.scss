@@ -325,6 +325,62 @@ button, input {
 
 }
 
+.ControlLayout {
+  $control-margin: 20px;
+
+  @include flex(column, nowrap, center, center);
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  font-size: 20px;
+
+  .SlideControls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    
+    button {
+      height: 100px;
+      width: 50px;
+      font-size: 20px;
+    }
+  }
+
+  .SlidePagination {
+    position: absolute;
+    bottom: $control-margin;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    
+    input {
+      height: 100%;
+      font-size: 20px;
+    }
+
+  }
+
+  .SlideNotes {
+    width: 65%;
+    height: 60vh;
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      background-color: $bg-clr3;
+      border: 1px solid $bg-clr;
+      padding: $control-margin;
+      box-sizing: border-box;
+      font-size: 20px;
+      color: $txt-clr;
+    }
+  }
+
+}
+
 .ModeSelector {
   @include flex(column, nowrap, center, center);
   padding: 10px;
