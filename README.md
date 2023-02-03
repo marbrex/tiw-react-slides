@@ -49,6 +49,8 @@ Lint le code (ESLint)
 yarn lint
 ```
 
+> P.S. eslint affiche une erreur dans le code côté serveur liée à la propriété **project** qui indique le chemin vers le **tsconfig**. C'est parce que le serveur n'est pas inclu dans le Parcel.
+
 Modules externes utilisés dans le projet
 ---
 
