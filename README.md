@@ -27,6 +27,12 @@ make
 
 > P.S. **Yarn** doit être installé au préalable.
 
+Modules externes utilisés dans le projet
+---
+
+- Un bundler **Parcel** au lieu de **Webpack** (J'ai quand même fait un webpack fonctionnel au début sur une branche à part, mais la configuration m'a paru un peu lourde). Parcel est simple à utiliser, ne nécéssite pas beaucoup de configuration et plus rapide que Webpack. En plus, Parcel supporte beaucoup de formats *out of the box*.
+- **SASS** au lieu de **Tailwind**. SASS est un langage étendu de CSS (pre-processor). Il est plus comfortable à utiliser et plus flexible comparé à Tailwind. Le code des composants n'est pas pollué avec plein de classes Tailwind.
+
 Problèmes rencontrées
 ---
 
