@@ -1,22 +1,24 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useStoreState } from '../application/store/hooks'
+import { useLocation } from 'react-router-dom'
+import { useStoreActions, useStoreState } from '../application/store/hooks'
 
 const SlideControls: React.FC = () => {
 
   const slideIndex = useStoreState(state => state.slideIndex)
   const slidesCount = useStoreState(state => state.slidesCount)
-
-  const navigate = useNavigate()
+  const setSlide = useStoreActions(state => state.setSlide)
+  const location = useLocation()
 
   const onClickPrev = (): void => {
     const nextSlideNum: number = slideIndex
-    navigate(`slide/${nextSlideNum}`)
+    const path = location.pathname.split('/').filter(x => x !== '').at(0)
+    setSlide({ slideNum: nextSlideNum, navigate: path !== 'control' })
   }
 
   const onClickNext = (): void => {
     const nextSlideNum: number = slideIndex + 2
-    navigate(`slide/${nextSlideNum}`)
+    const path = location.pathname.split('/').filter(x => x !== '').at(0)
+    setSlide({ slideNum: nextSlideNum, navigate: path !== 'control' })
   }
 
   return (
